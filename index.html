@@ -6,44 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
   </head>
   <body>
-    <div id="app">{{message}}</div>
-
-    <div id="app-2">
-      <span v-bind:title="message"> asdf </span>
+    <div id="app">
+      <div v-bind:class="[{activeClass: isActive}, errorClass]">DIV</div>
     </div>
 
-    <div id="app-3">
-      <p v-if="seen">you can see me</p>
-      <button v-on:click="showMessage">{{buttonTitle}}</button>
-    </div>
 
-    <div id="app-4">
-      <ol>
-        <li v-for="todo in todos">{{todo.text}}</li>
-      </ol>
-    </div>
-
-    <div id="app-5">
-      <p>{{message}}</p>
-      <button v-on:click="reverseMessage">메세지 뒤집기</button>
-    </div>
-
-    <div id="app-6">
-      <input v-model="message" placeholder="텍스트를 입력하세요">
-      <p>{{message}}</p>
-    </div>
-
-    <div id="app-7">
-      <ol>
-        <todo-item
-          v-for="item in groceryList"
-          v-bind:todo="item"
-          v-bind:key="item.id"
-        ></todo-item>
-      </ol>
-    </div>
 
     <script src="index.js"></script>
     <script src="components.js"></script>
